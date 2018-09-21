@@ -1,0 +1,1905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<title>EIFM Performance Dashboard</title>
+
+	<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.11.2/jquery-ui.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/1.4.14/jquery.scrollTo.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href='fonts/fonts.css' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="lightbox/lightbox.css">
+	<script src="lightbox/lightbox.min.js"></script>
+
+	<!-- engage tooltips -->
+	<script>
+	  $(function() {
+	    $( document ).tooltip({
+	      position: {
+	        my: "center bottom-20",
+	        at: "center top",
+	        using: function( position, feedback ) {
+	          $( this ).css( position );
+	          $( "<div>" )
+	            .addClass( "arrow" )
+	            .addClass( feedback.vertical )
+	            .addClass( feedback.horizontal )
+	            .appendTo( this );
+	        }
+	      }
+	    });
+	  });
+	</script>
+
+</head>
+
+<body>
+
+
+
+
+	<!-- preload Section 1 button hover states -->
+	<img src="img/section1-leftcolumn-buttons-hover.png" style="display:none;">
+
+	<!-- Dashboard & dials -->
+	<div id="dialswrap">
+		<div id="dashboarddials" name="dashboarddials">
+
+			<img src="img/01-dials-logo.png" alt="EIFM Performance Dashboard" id="eifmlogo">
+
+
+
+
+
+			<!-- DASHBOARD Tooltips - ////////////////////////////////////////
+			To change the tooltip content, edit the divs' title tags ////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////-->
+
+			<div id="tooltipwrap">
+				
+				<div class="tooltipbox" id="tip1" title="Engagement defined as either a registration, attendee, download, or subscription. Total engagements from Enterprise contacts within marketing activities."></div>
+				
+				<div class="tooltipbox" id="tip2" title="Customer engagements only for those customers whose job function is outside of IT."></div>
+				
+				<div class="tooltipbox" id="tip3" title="Total number of customer engagements divided by unique number of accounts engaged. Accounts Engaged = at least one customer engagement within the account."></div>
+				
+				<div class="tooltipbox" id="tip4" title="Total number of clicks, likes, posts, retweets, etc deriving from EIFM social channels."></div>
+				
+				<div class="tooltipbox" id="tip5" title="AM reported pipeline opportunity resulting from ASP engagement."></div>
+				
+				<div class="tooltipbox" id="tip6" title="Marketing identified contact who has demonstrated strong buying signals. Contact is available for AM acceptance in SFDC."></div>
+				
+				<div class="tooltipbox" id="tip7" title="Lead in SFDC which the AM has converted to an opportunity."></div>
+				
+				<div class="tooltipbox" id="tip8" title="New forecastable pipeline created up to 12 weeks after an account engaged in a marketing activity."></div>
+
+			</div>
+
+			<div id="dashdatawrap">
+
+
+
+
+
+				<!-- DASHBOARD DATA ////////////////////////////////////////////////////////////
+
+					Add class 'datared' to h2 tag to make numbers red instead of green.
+					Add class 'increase' to h2 tag to add an up arrow after number.
+					Add class 'decrease' to h2 tag to add a down arrow after number. 
+				
+				////////////////////////////////////////////////////////////////////////////////-->
+
+					<div class="dashdatabox" id="dashdata1">
+						<h1>Customer <br />Engagements</h1>
+						<h2 class="">10,983</h2>
+					</div>
+
+					<div class="dashdatabox" id="dashdata2">
+						<h1>Lob Engagements</h1>
+						<h2 class="">1,676</h2>
+					</div>
+
+					<div class="dashdatabox" id="dashdata3">
+						<h1>Average <br />Engagements <br />Per Account</h1>
+						<h2 class="">20</h2>
+					</div>
+
+					<div id="dashdatacolumnwrap"><!-- Center Data Column -->
+
+						<div class="dashdatacolumn" id="dashdata4">
+							<h1>Social Media <br />Interactions</h1>
+							<h2 class="increase">35,731</h2>
+						</div>
+
+						<div class="dashdatacolumn" id="dashdata5">
+							<h1>Accelerated Success <br />Program App</h1>
+							<h2 class="increase">$71.7M</h2>
+						</div>
+
+						<div class="dashdatacolumn" id="dashdata6">
+							<h1>Marketing Qualified <br />Leads</h1>
+							<h2 class="increase">902</h2>
+						</div>
+
+						<div class="dashdatacolumn" id="dashdata7">
+							<h1>Sales Qualified <br />Leads</h1>
+							<h2 class="">14</h2>
+						</div>
+
+						<div class="dashdatacolumn" id="dashdata8">
+							<h1>Marketing Enabled <br />Pipeline</h1>
+							<h2 class="">$1,362B</h2>
+						</div>
+
+					</div>
+					
+			</div>
+
+
+			<!-- DASHBOARD Screen CTA ////////////////////
+			////////////////////////////////////////-->
+			
+			<a href="#gpsscreen" id="dashcta" class="scroller">NAVIGATE TO FULL PERFORMANCE DETAILS (YTD) &#10140;</a>
+
+		</div>
+	</div>
+
+
+	<!-- End Dashboard Screen ////////////////////
+		////////////////////////////////////////-->
+
+
+
+
+
+
+
+
+
+	<!-- Begin GPS Screen ////////////////////////////////////////////////////////////////////////////////////////////////////
+		////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+
+	<div id="gpswrap">
+		<div id="gpsscreen">
+			<div class="paddedcell">
+
+
+				<!-- Main Top Nav Buttons  ////////////////////
+				////////////////////////////////////////-->
+
+				<ul id="dashlink">
+					<li><a href="#dashboarddials" id="dashtab" class="scroller">Back to Dashboard</a></li>
+				</ul>
+
+				<div class="tabs" id="maintabs"> <!-- Everything in GPS section needs to be wrapped in this div for nav to work -->
+
+					<ul id="topnav">
+					    <li><a href="#tabs-1" id="areatab">Area</a></li>
+					    <li><a href="#tabs-2" id="architecturetab">Architecture</a></li>
+					    <li><a href="#tabs-3" id="transformationtab">Business Transformation</a></li>
+					    <li><a href="#tabs-4" id="funneltab">Enterprise Performance Funnel</a></li>
+					</ul>
+
+
+
+
+
+					<!-- Section 1 - Enterprise Breakdown ////////////////////////////////////////////////////////////
+					////////////////////////////////////////////////////////////////////////////////-->
+
+					<div id="tabs-1" class="tabs">
+
+							
+							<div class="rightcolumnwrap">
+
+					  			<div id="tab1-0" class="rightcolumn">
+					  						
+					  						<!-- Image Map to make world map itself clickable ////////////////////////////////////////
+					  						////////////////////////////////////////////////////////////////////////////////-->
+					  						<img src="img/section1-rightcolumn-1.png" width="700px" alt="World Map" usemap="worldmap">
+
+											<map name="worldmap">
+											  <area shape="poly" coords="41,13,106,13,245,45,242,314,218,314,216,330,132,331,27,246,11,180,42,12" onclick="$('.mapbtn4').click();" href="javascript:;" alt="West">
+											  <area shape="poly" coords="249,33,246,234,496,236,493,190,508,184,526,169,528,143,500,142,486,72,397,31,249,31" onclick="$('.mapbtn1').click();" href="javascript:;" alt="Central">
+											  <area shape="poly" coords="246,237,497,239,511,227,547,228,548,194,567,177,604,177,593,197,604,202,604,229,543,312,575,345,572,418,507,354,455,360,362,361,344,382,339,416,292,388,295,365,263,361,261,379,235,358,234,336,222,323,221,321,247,318,248,238" onclick="$('.mapbtn3').click();" href="javascript:;" alt="South">
+											  <area shape="poly" coords="626,6,649,22,649,42,632,58,620,65,617,109,605,111,603,168,563,170,543,190,539,223,507,224,498,231,497,194,532,179,535,141,511,136,564,68,597,40,624,7" onclick="$('.mapbtn2').click();" href="javascript:;" alt="East">
+											</map>
+							    </div>
+
+
+
+							    <div id="tab1-1" class="rightcolumn section1-central">
+
+									    <!-- //////////////////// Central Region - Left Column Text - Comment entire "leftcolumnhover" div out if empty
+										////////////////////////////////////////////////////////////////////////////////-->
+									    <div class="leftcolumnhover">
+									    	<div>
+
+									    	<h1>Central Region</h1>
+
+										    <p>This information is specific to the Central region.</p>
+										    <p>
+										    <a onclick="$('.mapbtn0').click();" href="javascript:;" class="leftcolumnback red">&#x276e;&nbsp;&nbsp;&nbsp;Back</a>
+										    </p>
+											</div>
+								    	</div>
+
+							        
+
+
+										<a class="databack rightcolumninner" onclick="$('.mapbtn0').click();" href="javascript:;">
+										
+										<!-- //////////////////// CENTRAL Region Data 
+										 ////////////////////////////////////////////////////////////////////////////////-->
+
+										<h1 class="red">2,763</h1><h2>Customer Engagements</h2>
+										
+											<div>
+												Average Engagements Per Account
+												<span>
+													17.8
+												</span>
+											</div>
+											<div>
+												LoB Engagements
+												<span>
+													356
+												</span>
+											</div>
+											<div>
+												Executive IT Engagement
+												<span>
+													81
+												</span>
+											</div>
+											<div>
+												Net New Customers Engagements
+												<span>
+													852
+												</span>
+											</div>
+											<div>
+												Accelerated Success Program Opportunity
+												<span>
+													$13M
+												</span>
+											</div>
+											<div>
+												Marketing Qualified Leads
+												<span>
+													292
+												</span>
+											</div>
+											<div>
+												Sales Qualified Leads
+												<span>
+													6
+												</span>
+											</div>
+											<div>
+												Marketing Enabled Pipeline
+												<span>
+													$291M
+												</span>
+											</div>
+										
+									<p class="fineprint">
+										<sup>*</sup>Reflects YTD performance data
+									</p>
+							        </a>
+
+							    </div>
+
+
+
+
+
+							    <div id="tab1-2" class="rightcolumn section1-east">
+							    	
+									    <!-- //////////////////// East Region - Left Column Text - Comment entire "leftcolumnhover" div out if empty
+										////////////////////////////////////////////////////////////////////////////////-->
+									    <div class="leftcolumnhover">
+									    	<div>
+
+									    	<h1>East Region</h1>
+
+										    <p>This information is specific to the East.</p>
+											<p>
+										    <a onclick="$('.mapbtn0').click();" href="javascript:;" class="leftcolumnback blue">&#x276e;&nbsp;&nbsp;&nbsp;Back</a>
+											</p>
+											</div>
+									    </div>
+
+
+
+
+										<a class="databack rightcolumninner" onclick="$('.mapbtn0').click();" href="javascript:;">
+										
+										<!-- //////////////////// EAST Region Data 
+										 ////////////////////////////////////////////////////////////////////////////////-->
+
+										<h1 class="blue">2,837</h1><h2>Customer Engagements</h2>
+										
+											<div>
+												Average Engagements Per Account
+												<span>
+													19.8
+												</span>
+											</div>
+											<div>
+												LoB Engagements
+												<span>
+													498
+												</span>
+											</div>
+											<div>
+												Executive IT Engagement
+												<span>
+													113
+												</span>
+											</div>
+											<div>
+												Net New Customers Engagements
+												<span>
+													941
+												</span>
+											</div>
+											<div>
+												Accelerated Success Program Opportunity
+												<span>
+													$26.7M
+												</span>
+											</div>
+											<div>
+												Marketing Qualified Leads
+												<span>
+													250
+												</span>
+											</div>
+											<div>
+												Sales Qualified Leads
+												<span>
+													4
+												</span>
+											</div>
+											<div>
+												Marketing Enabled Pipeline
+												<span>
+													$344M
+												</span>
+											</div>
+										
+									<p class="fineprint">
+										<sup>*</sup>Reflects YTD performance data
+									</p>
+							        </a>
+
+							    </div>
+
+
+
+
+
+							    <div id="tab1-3" class="rightcolumn section1-south">
+							    	
+									    <!-- //////////////////// South Region - Left Column Text - Comment entire "leftcolumnhover" div out if empty
+										////////////////////////////////////////////////////////////////////////////////-->
+									    <div class="leftcolumnhover">
+									    	<div>
+
+									    	<h1>South Region</h1>
+
+										    <p>This information is specific to the South.
+										    </p>
+										    <p>
+										    <a onclick="$('.mapbtn0').click();" href="javascript:;" class="leftcolumnback gold">&#x276e;&nbsp;&nbsp;&nbsp;Back</a>
+											</p>
+											</div>
+									    </div>
+
+										
+
+
+										<a class="databack rightcolumninner" onclick="$('.mapbtn0').click();" href="javascript:;">
+										
+										<!-- //////////////////// SOUTH Region Data 
+										 ////////////////////////////////////////////////////////////////////////////////-->
+
+										<h1 class="gold">2,581</h1><h2>Customer Engagements</h2>
+										
+											<div>
+												Average Engagements Per Account
+												<span>
+													18.6
+												</span>
+											</div>
+											<div>
+												LoB Engagements
+												<span>
+													342
+												</span>
+											</div>
+											<div>
+												Executive IT Engagement
+												<span>
+													109
+												</span>
+											</div>
+											<div>
+												Net New Customers Engagements
+												<span>
+													864
+												</span>
+											</div>
+											<div>
+												Accelerated Success Program Opportunity
+												<span>
+													$16M
+												</span>
+											</div>
+											<div>
+												Marketing Qualified Leads
+												<span>
+													146
+												</span>
+											</div>
+											<div>
+												Sales Qualified Leads
+												<span>
+													3
+												</span>
+											</div>
+											<div>
+												Marketing Enabled Pipeline
+												<span>
+													$353M
+												</span>
+											</div>
+										
+									<p class="fineprint">
+										<sup>*</sup>Reflects YTD performance data
+									</p>
+							        </a>
+
+
+							    </div>
+
+
+
+
+							    <div id="tab1-4" class="rightcolumn section1-west">
+							    	
+									    <!-- //////////////////// West Region - Left Column Text - Comment entire "leftcolumnhover" div out if empty
+										////////////////////////////////////////////////////////////////////////////////-->
+									    <div class="leftcolumnhover">
+									    	<div>
+
+									    	<h1>West Region</h1>
+
+										    <p>This information is specific to the West.</p>
+										    <p>
+										    <a onclick="$('.mapbtn0').click();" href="javascript:;" class="leftcolumnback green">&#x276e;&nbsp;&nbsp;&nbsp;Back</a>
+											</p>
+											</div>
+									    </div>
+
+
+
+
+										<a class="databack rightcolumninner" onclick="$('.mapbtn0').click();" href="javascript:;">
+										
+										<!-- //////////////////// WEST Region Data 
+										 ////////////////////////////////////////////////////////////////////////////////-->
+
+										<h1 class="green">2,802</h1><h2>Customer Engagements</h2>
+										
+											<div>
+												Average Engagements Per Account
+												<span>
+													26.4
+												</span>
+											</div>
+											<div>
+												LoB Engagements
+												<span>
+													480
+												</span>
+											</div>
+											<div>
+												Executive IT Engagement
+												<span>
+													60
+												</span>
+											</div>
+											<div>
+												Net New Customers Engagements
+												<span>
+													1,063
+												</span>
+											</div>
+											<div>
+												Accelerated Success Program Opportunity
+												<span>
+													$16M
+												</span>
+											</div>
+											<div>
+												Marketing Qualified Leads
+												<span>
+													214
+												</span>
+											</div>
+											<div>
+												Sales Qualified Leads
+												<span>
+													1
+												</span>
+											</div>
+											<div>
+												Marketing Enabled Pipeline
+												<span>
+													$373M
+												</span>
+											</div>
+										
+									<p class="fineprint">
+										<sup>*</sup>Reflects YTD performance data
+									</p>
+							        </a>
+
+
+							    </div>
+							</div>
+
+
+
+
+							<!-- //////////////////// Section 1 - Default left column 
+							////////////////////////////////////////////////////////////////////////////////-->
+							<div class="leftcolumnwrap">
+								<div class="leftcolumn">
+
+								    <h1>Click below to see impact by area.</h1>
+
+								    <p>Take the conversation to the <br />next level. See how we’re driving <br />non-IT influence and solution adoption, while improving the buying experience and <br />customer loyalty.</p>
+								    	
+								    <!-- If these buttons are removed, tabs won't work at all for this section. -->	
+									<ul>   
+										<li class="gps_default_tab"><a href="#tab1-0" class="mapbtn0">Default</a></li>
+										<li><a href="#tab1-1" class="mapbtns mapbtn1">Central</a></li>
+										<li><a href="#tab1-2" class="mapbtns mapbtn2">East</a></li>
+										<li><a href="#tab1-3" class="mapbtns mapbtn3">South</a></li>
+										<li><a href="#tab1-4" class="mapbtns mapbtn4">West</a></li>
+									</ul>
+
+								</div>
+
+								<p class="leftcolumn2">
+								<span>Description:</span> Impact driven across the EIFM Marketing portfolio on Enterprise Areas.
+								</p>
+							</div>
+
+					</div>
+
+
+
+
+
+
+
+
+
+
+					<!-- Section 2 - Architecture Types ////////////////////
+					////////////////////////////////////////-->
+
+					  <div id="tabs-2" class="tabs">
+
+							<!-- hidden tabs to make tile buttons function correctly.  If this list is removed, tabs won't work for this section at all. --> 
+							<ul class="gps_default_tab">  
+									<li><a href="#tab2-0" class="arcbtn0">Default</a></li>
+									<li><a href="#tab2-1" class="arcbtns arcbtn1">Collaboration</a></li>
+									<li><a href="#tab2-2" class="arcbtns arcbtn2">Security</a></li>
+									<li><a href="#tab2-3" class="arcbtns arcbtn3">Enterprise Networking</a></li>
+									<li><a href="#tab2-4" class="arcbtns arcbtn4">Data Center</a></li>
+							</ul>
+
+					  		<div class="rightcolumnwrap">
+					  			<div id="tab2-0">
+							        <ul id="tiles">
+							        	<li>
+							        	<a onclick="$('.arcbtn1').click();" href="javascript:;" id="tile-collab">Collaboration</a>
+							        	</li>
+									    <li>
+									    <a onclick="$('.arcbtn2').click();" href="javascript:;" id="tile-security">Security</a>
+									    </li>
+									    <li>
+									    <a onclick="$('.arcbtn3').click();" href="javascript:;" id="tile-networking">Enterprise Networking</a>
+									    </li>
+									    <li>
+									    <a onclick="$('.arcbtn4').click();" href="javascript:;" id="tile-datacenter">Data Center</a>
+									    </li>
+									</ul>
+							    </div>
+							    <div id="tab2-1" class="rightcolumn">
+
+
+
+
+
+
+									<!-- //////////////////// Collaboration - Left Column Text - Comment entire "leftcolumnhover" div out if empty
+									////////////////////////////////////////////////////////////////////////////////-->
+									    <div class="leftcolumnhover">
+									    	<div>
+
+									    	<h1>Collaboration</h1>
+
+										    <p>This information is specific to Collaboration.
+										    </p>
+										    <p>
+										    <a onclick="$('.arcbtn0').click();" href="javascript:;" class="leftcolumnback blue">&#x276e;&nbsp;&nbsp;&nbsp;Back</a>
+											</p>
+											</div>
+									    </div>		
+
+
+
+
+
+
+							       
+									<!-- Section 2 - COLLABORATION ////////////////////
+									////////////////////////////////////////////////////////////////////////////////-->
+									<div class="rightcolumninner">
+									<img src="img/section2-icon-collab.png"><h1 class="blue">Collaboration</h1>
+									<a onclick="$('.arcbtn0').click();" href="javascript:;" class="backbtn blue">&#x276e;&nbsp;&nbsp;&nbsp;Back</a>
+									<hr />
+							        <h2 class="blue">720</h2><h3>Customer Engagements</h3>
+										
+
+											<div>
+												% Enterprise Accounts Engaged
+												<span>
+													42%
+												</span>
+											</div>
+											<div>
+												LOB Customer Engagements
+												<span>
+													145
+												</span>
+											</div>
+											<div>
+												Executive IT Engagements
+												<span>
+													23
+												</span>
+											</div>
+											<div>
+												Net New Customers Engaged
+												<span>
+													162
+												</span>
+											</div>
+											<div>
+												Marketing Qualified Leads
+												<span>
+													22
+												</span>
+											</div>
+											<div>
+												Sales Qualified Leads
+												<span>
+													0
+												</span>
+											</div>
+											<div>
+												Marketing Enabled Pipeline
+												<span>
+													$99M
+												</span>
+											</div>
+											
+										</div></div>
+							
+							    <div id="tab2-2" class="rightcolumn">
+
+
+
+
+
+
+									<!-- //////////////////// Security - Left Column Text - Comment entire "leftcolumnhover" div out if empty
+									////////////////////////////////////////////////////////////////////////////////-->
+									<div class="leftcolumnhover">
+									    	<div>
+
+									    	<h1>Security</h1>
+
+										    <p>This information is specific to Security.
+										    </p>
+											<p>
+										    <a onclick="$('.arcbtn0').click();" href="javascript:;" class="leftcolumnback gold">&#x276e;&nbsp;&nbsp;&nbsp;Back</a>
+											</p>
+											</div>
+									</div>		
+
+
+
+
+
+
+
+							        <!-- Section 2 - SECURITY ////////////////////
+									////////////////////////////////////////////////////////////////////////////////-->
+									<div class="rightcolumninner">
+									<img src="img/section2-icon-secu.png"><h1 class="gold">Security</h1>
+									<a onclick="$('.arcbtn0').click();" href="javascript:;" class="backbtn gold">&#x276e;&nbsp;&nbsp;&nbsp;Back</a>
+									<hr />
+							        <h2 class="gold">1,703</h2><h3>Customer Engagements</h3>
+										
+
+											<div>
+												% Enterprise Accounts Engaged
+												<span>
+													69%
+												</span>
+											</div>
+											<div>
+												LOB Customer Engagements
+												<span>
+													102
+												</span>
+											</div>
+											<div>
+												Executive IT Engagements
+												<span>
+													36
+												</span>
+											</div>
+											<div>
+												Net New Customers Engaged
+												<span>
+													554
+												</span>
+											</div>
+											<div>
+												Marketing Qualified Leads
+												<span>
+													531
+												</span>
+											</div>
+											<div>
+												Sales Qualified Leads
+												<span>
+													3
+												</span>
+											</div>
+											<div>
+												Marketing Enabled Pipeline
+												<span>
+													$240M
+												</span>
+											</div>
+
+							    </div>
+							</div>
+							    <div id="tab2-3" class="rightcolumn">
+							        
+
+
+
+
+									<!-- //////////////////// Enterprise Networking - Left Column Text - Comment entire "leftcolumnhover" div out if empty
+										////////////////////////////////////////////////////////////////////////////////-->
+									    <div class="leftcolumnhover">
+									    	<div>
+
+									    	<h1>Enterprise Networking</h1>
+
+										    <p>This information is specific to Enterprise Networking.
+										    </p>
+										    <p>
+										    <a onclick="$('.arcbtn0').click();" href="javascript:;" class="leftcolumnback green">&#x276e;&nbsp;&nbsp;&nbsp;Back</a>
+											</p>
+											</div>
+									</div>		
+
+
+
+
+
+
+							        <!-- Section 2 - ENTERPRISE NETWORKING ////////////////////
+									////////////////////////////////////////////////////////////////////////////////-->
+									<div class="rightcolumninner">
+									<img src="img/section2-icon-networking.png"><h1 class="green">Enterprise Networking</h1>
+									<a onclick="$('.arcbtn0').click();" href="javascript:;" class="backbtn green">&#x276e;&nbsp;&nbsp;&nbsp;Back</a>
+									<hr />
+							        <h2 class="green">1,462</h2><h3>Customer Engagements</h3>
+										
+
+											<div>
+												% Enterprise Accounts Engaged
+												<span>
+													67%
+												</span>
+											</div>
+											<div>
+												LOB Customer Engagements
+												<span>
+													90
+												</span>
+											</div>
+											<div>
+												Executive IT Engagements
+												<span>
+													17
+												</span>
+											</div>
+											<div>
+												Net New Customers Engaged
+												<span>
+													184
+												</span>
+											</div>
+											<div>
+												Marketing Qualified Leads
+												<span>
+													79
+												</span>
+											</div>
+											<div>
+												Sales Qualified Leads
+												<span>
+													0
+												</span>
+											</div>
+											<div>
+												Marketing Enabled Pipeline
+												<span>
+													$120M
+												</span>
+											</div>
+
+							    </div>
+							</div>
+							    <div id="tab2-4" class="rightcolumn">
+
+
+
+
+
+
+									<!-- //////////////////// Data Center - Left Column Text - Comment entire "leftcolumnhover" div out if empty
+									////////////////////////////////////////////////////////////////////////////////-->
+									<div class="leftcolumnhover">
+									    	<div>
+
+									    	<h1>Data Center</h1>
+
+										    <p>This information is specific to Data Center.
+										    </p>
+											<p>
+										    <a onclick="$('.arcbtn0').click();" href="javascript:;" class="leftcolumnback red">&#x276e;&nbsp;&nbsp;&nbsp;Back</a>
+											</p>									
+											</div>
+									</div>		
+
+
+
+							        
+
+							        <!-- Section 2 - DATA CENTER ////////////////////
+									////////////////////////////////////////////////////////////////////////////////-->
+									<div class="rightcolumninner">
+									<img src="img/section2-icon-data.png"><h1 class="red">DATA CENTER</h1>
+									<a onclick="$('.arcbtn0').click();" href="javascript:;" class="backbtn red">&#x276e;&nbsp;&nbsp;&nbsp;Back</a>
+									<hr />
+							        <h2 class="red">4,354</h2><h3>Customer Engagements</h3>
+										
+
+											<div>
+												% Enterprise Accounts Engaged
+												<span>
+													78%
+												</span>
+											</div>
+											<div>
+												LOB Customer Engagements
+												<span>
+													480
+												</span>
+											</div>
+											<div>
+												Executive IT Engagements
+												<span>
+													73
+												</span>
+											</div>
+											<div>
+												Net New Customers Engaged
+												<span>
+													1,593
+												</span>
+											</div>
+											<div>
+												Marketing Qualified Leads
+												<span>
+													55
+												</span>
+											</div>
+											<div>
+												Sales Qualified Leads
+												<span>
+													2
+												</span>
+											</div>
+											<div>
+												Marketing Enabled Pipeline
+												<span>
+													$409M
+												</span>
+											</div>
+							        
+							    </div>
+							</div>
+							</div>
+
+
+							<!-- Section 2 - Default left column ////////////////////
+							////////////////////////////////////////////////////////////////////////////////-->
+							<div class="leftcolumnwrap">
+								<div class="leftcolumn">
+
+								    <h1>Click a SEGMENT to see impact by architecture.</h1>
+
+								    <p>In 1HFY15, activities drove engagements that bridged customers’ IT and business agendas in the areas of Cloud, Big Data, Security, and Mobility. For 2HFY15, expect a sharper focus on LOB and Executive IT engagements, as EIFM programs continue to emphasize the connection between our core architectures and formal enterprise solutions such as connected analytics, mobile experiences, branch-in-a-box, intelligent contact centers, and business conferencing and communications.
+								
+								</div>
+
+								<p class="leftcolumn2">
+								<span>Description:</span> Impact generated by architecture specific marketing activities on Enterprise accounts.
+								</p>
+							</div>
+					  </div>
+
+
+
+
+
+
+
+
+
+
+					<!-- Section 3 - Business Transformation Roadmap ////////////////////
+					////////////////////////////////////////////////////////////////////////////////-->
+
+					  <div id="tabs-3" class="tabs">
+					  	<<div id="mapbg">
+							    	
+								<ul class="gps_default_tab"> <!-- hidden tabs to make map marker buttons work.  If this list is removed, tabs won't work for this section. -->
+										<li><a href="#tab3-0" class="roadmapbtn0">Map Markers</a></li>
+									    <li><a href="#tab3-1" class="roadmapbtn1">Healthcare</a></li>
+									    <li><a href="#tab3-2" class="roadmapbtn2">Retail</a></li>
+									    <li><a href="#tab3-3" class="roadmapbtn3">Manufacturing</a></li>
+									    <li><a href="#tab3-4" class="roadmapbtn4">Financial Services</a></li>
+									    <li><a href="#tab3-5" class="roadmapbtn5">Customer Experience</a></li>
+									    <li><a href="#tab3-6" class="roadmapbtn6">Workforce Experience</a></li>
+									    <li><a href="#tab3-7" class="roadmapbtn7">Business Analytics</a></li>
+								</ul>
+
+					  		<div class="rightcolumnwrap">
+							    <div id="tab3-0">
+							        
+							        <img src="img/section3-mapmarkers-1.png" width="700px" alt="Map" usemap="#MapMap">
+							          <map name="MapMap">
+									    <area shape="rect" coords="164,31,265,127" onclick="$('.roadmapbtn5').click();" href="javascript:;">
+									    <area shape="rect" coords="349,64,451,157" onclick="$('.roadmapbtn2').click();" href="javascript:;">
+									    <area shape="rect" coords="566,31,667,127" onclick="$('.roadmapbtn3').click();" href="javascript:;">
+									    <area shape="rect" coords="39,170,138,266" onclick="$('.roadmapbtn1').click();" href="javascript:;">
+									    <area shape="rect" coords="199,286,301,384" onclick="$('.roadmapbtn6').click();" href="javascript:;">
+									    <area shape="rect" coords="381,230,484,325" onclick="$('.roadmapbtn4').click();" href="javascript:;">
+									    <area shape="rect" coords="565,264,667,361" onclick="$('.roadmapbtn7').click();" href="javascript:;">
+									  </map>
+									  
+							    </div>
+							    <div id="tab3-1" class="rightcolumn ">
+
+
+
+
+
+
+
+
+									<!-- //////////////////// Healthcare - Left Column Text - Comment entire "leftcolumnhover" div out if empty
+									////////////////////////////////////////////////////////////////////////////////-->
+									<div class="leftcolumnhover">
+									    	<div>
+
+									    	<h1>Healthcare</h1>
+
+										    <p>This information is specific to Healthcare.
+										    </p>
+										    <p>
+										    <a onclick="$('.roadmapbtn0').click();" href="javascript:;" class="leftcolumnback blue">&#x276e;&nbsp;&nbsp;&nbsp;Back</a>
+											</p>
+											</div>
+									</div>		
+
+
+
+
+
+									<!-- Section 3 - Healthcare ////////////////////
+									////////////////////////////////////////////////////////////////////////////////-->
+									<div class="rightcolumninner">
+									<img src="img/section3-icon-healthcare.png">
+									<h1 class="blue">HEALTHCARE</h1>
+									<a onclick="$('.roadmapbtn0').click();" href="javascript:;" class="backbtn blue">&#x276e;&nbsp;&nbsp;&nbsp;Back</a>
+									<hr class="blue" />
+							        <h2 class="blue">1,472</h2><h3>Customer Engagements</h3>
+										
+
+											<div>
+												Accounts
+												<span>
+													80
+												</span>
+											</div>
+											<div>
+												Average Engagements Per Account
+												<span>
+													19
+												</span>
+											</div>
+											<div>
+												LoB Engagements
+												<span>
+													187
+												</span>
+											</div>
+											<div>
+												Executive IT Engagements
+												<span>
+													50
+												</span>
+											</div>
+											<div>
+												Net New Customers Engaged
+												<span>
+													380
+												</span>
+											</div>
+											<div>
+												Marketing Qualified Leads
+												<span>
+													81
+												</span>
+											</div>
+											<div>
+												Sales Qualified Leads
+												<span>
+													0
+												</span>
+											</div>
+											<div>
+												Marketing Enabled Pipeline
+												<span>
+													$186M
+												</span>
+											</div>
+							        
+							    </div>
+							</div>
+							    <div id="tab3-2" class="rightcolumn ">
+
+
+
+
+
+
+									<!-- //////////////////// Retail & Hospitality - Left Column Text - Comment entire "leftcolumnhover" div out if empty
+									////////////////////////////////////////////////////////////////////////////////-->
+									<div class="leftcolumnhover">
+									    	<div>
+
+									    	<h1>Retail & Hospitality</h1>
+
+										    <p>This information is specific to Retail & Hospitality.
+										    </p>
+										    <p>
+										    <a onclick="$('.roadmapbtn0').click();" href="javascript:;" class="leftcolumnback yellow">&#x276e;&nbsp;&nbsp;&nbsp;Back</a>
+											</p>
+											</div>
+									</div>		
+
+
+
+							        <!-- Section 3 - Retail & Hospitality ////////////////////
+									////////////////////////////////////////////////////////////////////////////////-->
+									<div class="rightcolumninner">
+									<img src="img/section3-icon-retailandhospitality.png">
+									<h1 class="yellow">Retail And Hospitality</h1>
+									<a onclick="$('.roadmapbtn0').click();" href="javascript:;" class="backbtn yellow">&#x276e;&nbsp;&nbsp;&nbsp;Back</a>
+									<hr class="yellow" />
+							        <h2 class="yellow">692</h2><h3>Customer Engagements</h3>
+										
+
+											<div>
+												Accounts
+												<span>
+													61
+												</span>
+											</div>
+											<div>
+												Average Engagements Per Account
+												<span>
+													12
+												</span>
+											</div>
+											<div>
+												LoB Engagements
+												<span>
+													86
+												</span>
+											</div>
+											<div>
+												Executive IT Engagements
+												<span>
+													53
+												</span>
+											</div>
+											<div>
+												Net New Customers Engaged
+												<span>
+													149
+												</span>
+											</div>
+											<div>
+												Marketing Qualified Leads
+												<span>
+													67
+												</span>
+											</div>
+											<div>
+												Sales Qualified Leads
+												<span>
+													1
+												</span>
+											</div>
+											<div>
+												Marketing Enabled Pipeline
+												<span>
+													$166M
+												</span>
+											</div>
+										</div></div>
+							    <div id="tab3-3" class="rightcolumn ">
+							        
+
+
+
+
+
+									<!-- //////////////////// Manufacturing And Energy - Left Column Text - Comment entire "leftcolumnhover" div out if empty
+									////////////////////////////////////////////////////////////////////////////////-->
+									<div class="leftcolumnhover">
+									    	<div>
+
+									    	<h1> Manufacturing And Energy</h1>
+
+										    <p>This information is specific to Manufacturing And Energy.
+										    </p>
+										    <p>
+										    <a onclick="$('.roadmapbtn0').click();" href="javascript:;" class="leftcolumnback purple">&#x276e;&nbsp;&nbsp;&nbsp;Back</a>
+											</p>
+											</div>
+									</div>		
+
+
+
+									<!-- Section 3 - Manufacturing And Energy ////////////////////
+									////////////////////////////////////////////////////////////////////////////////-->
+									<div class="rightcolumninner">
+									<img src="img/section3-icon-manufacturingandenergy.png">
+									<h1 class="purple">Manufacturing And Energy</h1>
+									<a onclick="$('.roadmapbtn0').click();" href="javascript:;" class="backbtn purple">&#x276e;&nbsp;&nbsp;&nbsp;Back</a>
+									<hr class="purple" />
+							        <h2 class="purple">3,762</h2><h3>Customer Engagements</h3>
+										
+
+											<div>
+												Accounts
+												<span>
+													119
+												</span>
+											</div>
+											<div>
+												Average Engagements Per Account
+												<span>
+													33
+												</span>
+											</div>
+											<div>
+												LoB Engagements
+												<span>
+													620
+												</span>
+											</div>
+											<div>
+												Executive IT Engagements
+												<span>
+													93
+												</span>
+											</div>
+											<div>
+												Net New Customers Engaged
+												<span>
+													1,609
+												</span>
+											</div>
+											<div>
+												Marketing Qualified Leads
+												<span>
+													160
+												</span>
+											</div>
+											<div>
+												Sales Qualified Leads
+												<span>
+													3
+												</span>
+											</div>
+											<div>
+												Marketing Enabled Pipeline
+												<span>
+													$367M
+												</span>
+											</div>
+
+										</div></div>
+							    <div id="tab3-4" class="rightcolumn ">
+							        
+
+
+
+
+
+									<!-- //////////////////// Financial Services - Left Column Text - Comment entire "leftcolumnhover" div out if empty
+									////////////////////////////////////////////////////////////////////////////////-->
+									<div class="leftcolumnhover">
+									    	<div>
+
+									    	<h1>Financial Services</h1>
+
+										    <p>This information is specific to Financial Services.
+										    </p>
+											<p>
+										    <a onclick="$('.roadmapbtn0').click();" href="javascript:;" class="leftcolumnback green">&#x276e;&nbsp;&nbsp;&nbsp;Back</a>
+											</p>									
+											</div>
+									</div>		
+
+
+
+
+									<!-- Section 3 - Financial Services ////////////////////
+									////////////////////////////////////////////////////////////////////////////////-->
+									<div class="rightcolumninner">
+									<img src="img/section3-icon-financialservices.png">
+									<h1 class="green">Financial Services</h1>
+									<a onclick="$('.roadmapbtn0').click();" href="javascript:;" class="backbtn green">&#x276e;&nbsp;&nbsp;&nbsp;Back</a>
+									<hr class="green" />
+							        <h2 class="green">1,583</h2><h3>Customer Engagements</h3>
+										
+
+											<div>
+												Accounts
+												<span>
+													66
+												</span>
+											</div>
+											<div>
+												Average Engagements Per Account
+												<span>
+													24
+												</span>
+											</div>
+											<div>
+												LoB Engagements
+												<span>
+													292
+												</span>
+											</div>
+											<div>
+												Executive IT Engagements
+												<span>
+													81
+												</span>
+											</div>
+											<div>
+												Net New Customers Engaged
+												<span>
+													467
+												</span>
+											</div>
+											<div>
+												Marketing Qualified Leads
+												<span>
+													111
+												</span>
+											</div>
+											<div>
+												Sales Qualified Leads
+												<span>
+													0
+												</span>
+											</div>
+											<div>
+												Marketing Enabled Pipeline
+												<span>
+													$154M
+												</span>
+											</div>
+
+										</div></div>
+							    <div id="tab3-5" class="rightcolumn ">
+							       
+
+
+
+
+
+									<!-- //////////////////// Customer Experience - Left Column Text - Comment entire "leftcolumnhover" div out if empty
+									////////////////////////////////////////////////////////////////////////////////-->
+									<div class="leftcolumnhover">
+									    	<div>
+
+									    	<h1>Customer Experience</h1>
+
+										    <p>This information is specific to Customer Experience.
+										    </p>
+											<p>
+										    <a onclick="$('.roadmapbtn0').click();" href="javascript:;" class="leftcolumnback gold">&#x276e;&nbsp;&nbsp;&nbsp;Back</a>
+											</p>									
+											</div>
+									</div>		
+
+
+
+									<!-- Section 3 - Customer Experience ////////////////////
+									////////////////////////////////////////////////////////////////////////////////-->
+									<div class="rightcolumninner">
+									<img src="img/section3-icon-customerexperience.png">
+									<h1 class="gold">Customer Experience</h1>
+									<a onclick="$('.roadmapbtn0').click();" href="javascript:;" class="backbtn gold">&#x276e;&nbsp;&nbsp;&nbsp;Back</a>
+									<hr class="gold" />
+							        <h2 class="gold">337</h2><h3>Customer Engagements</h3>
+										
+
+											
+											<div>
+												Average Engagements Per Account
+												<span>
+													2
+												</span>
+											</div>
+											<div>
+												LoB Engagements
+												<span>
+													73
+												</span>
+											</div>
+											<div>
+												Executive IT Engagements
+												<span>
+													16
+												</span>
+											</div>
+											<div>
+												Net New Customers Engaged
+												<span>
+													90
+												</span>
+											</div>
+											<div>
+												Marketing Qualified Leads
+												<span>
+													0
+												</span>
+											</div>
+											<div>
+												Sales Qualified Leads
+												<span>
+													0
+												</span>
+											</div>
+											<div>
+												Marketing Enabled Pipeline
+												<span>
+													$37M
+												</span>
+											</div>
+
+
+										</div></div>
+							    <div id="tab3-6" class="rightcolumn ">
+
+
+
+
+
+
+									<!-- //////////////////// Workforce Experience - Left Column Text - Comment entire "leftcolumnhover" div out if empty
+									////////////////////////////////////////////////////////////////////////////////-->
+									<div class="leftcolumnhover">
+									    	<div>
+
+									    	<h1>Workforce Experience</h1>
+
+										    <p>This information is specific to Workforce Experience.
+										    </p>
+											<p>
+										    <a onclick="$('.roadmapbtn0').click();" href="javascript:;" class="leftcolumnback teal">&#x276e;&nbsp;&nbsp;&nbsp;Back</a>
+											</p>									
+											</div>
+									</div>		
+
+
+
+							        <!-- Section 3 - Workforce Experience ////////////////////
+									////////////////////////////////////////////////////////////////////////////////-->
+									<div class="rightcolumninner">
+									<img src="img/section3-icon-workforceexperience.png">
+									<h1 class="teal">Workforce Experience</h1>
+									<a onclick="$('.roadmapbtn0').click();" href="javascript:;" class="backbtn teal">&#x276e;&nbsp;&nbsp;&nbsp;Back</a>
+									<hr class="teal" />
+							        <h2 class="teal">20</h2><h3>Customer Engagements</h3>
+										
+
+											
+											<div>
+												Average Engagements Per Account
+												<span>
+													1
+												</span>
+											</div>
+											<div>
+												LoB Engagements
+												<span>
+													20
+												</span>
+											</div>
+											<div>
+												Executive IT Engagements
+												<span>
+													0
+												</span>
+											</div>
+											<div>
+												Net New Customers Engaged
+												<span>
+													12
+												</span>
+											</div>
+											<div>
+												Marketing Qualified Leads
+												<span>
+													0
+												</span>
+											</div>
+											<div>
+												Sales Qualified Leads
+												<span>
+													0
+												</span>
+											</div>
+											<div>
+												Marketing Enabled Pipeline
+												<span>
+													$325K
+												</span>
+											</div>
+										</div></div>
+							    <div id="tab3-7" class="rightcolumn ">
+							       
+
+
+
+
+
+									<!-- //////////////////// Business Analytics - Left Column Text - Comment entire "leftcolumnhover" div out if empty
+									////////////////////////////////////////////////////////////////////////////////-->
+									<div class="leftcolumnhover">
+									    	<div>
+
+									    	<h1>Business Analytics</h1>
+
+										    <p>This information is specific to Business Analytics.
+										    </p>
+											<p>
+										    <a onclick="$('.roadmapbtn0').click();" href="javascript:;" class="leftcolumnback orange">&#x276e;&nbsp;&nbsp;&nbsp;Back</a>
+											</p>
+											</div>
+									</div>		
+
+
+
+										<!-- Section 3 - Business Analytics ////////////////////
+									////////////////////////////////////////////////////////////////////////////////-->
+									<div class="rightcolumninner">
+									<img src="img/section3-icon-businessanalytics.png">
+									<h1 class="orange">Business Analytics</h1>
+									<a onclick="$('.roadmapbtn0').click();" href="javascript:;" class="backbtn orange">&#x276e;&nbsp;&nbsp;&nbsp;Back</a>
+									<hr class="orange" />
+							        <h2 class="orange">337</h2><h3>Customer Engagements</h3>
+										
+
+											
+											<div>
+												Average Engagements Per Account
+												<span>
+													3
+												</span>
+											</div>
+											<div>
+												LoB Engagements
+												<span>
+													105
+												</span>
+											</div>
+											<div>
+												Executive IT Engagements
+												<span>
+													42
+												</span>
+											</div>
+											<div>
+												Net New Customers Engaged
+												<span>
+													209
+												</span>
+											</div>
+											<div>
+												Marketing Qualified Leads
+												<span>
+													0
+												</span>
+											</div>
+											<div>
+												Sales Qualified Leads
+												<span>
+													0
+												</span>
+											</div>
+											<div>
+												Marketing Enabled Pipeline
+												<span>
+													$13M
+												</span>
+											</div>
+
+							    </div>    
+							</div></div>
+
+
+							<!-- Section 3 - Default left column ////////////////////
+							////////////////////////////////////////////////////////////////////////////////-->
+							<div class="leftcolumnwrap">
+								<div class="leftcolumn">
+
+								    <h1>Click the map markers to see impact by vertical or enterprise capability.</h1>
+
+								    <p>Following a balanced portfolio approach to target BTx accounts, with a bias towards high-quality interactions and meaningful engagements. Seeing increased momentum in IoE/IoT.</p>
+
+								</div>
+
+								<p class="leftcolumn2">
+								<span>Description:</span> Impact driven across the EIFM Marketing portfolio on BTx vertical accounts. <br /><br />
+								*Enterprise capabilties -  Impact generated by practice area specific marketing activities on Enterprise accounts.
+								</p>
+							</div>
+
+
+					  </div>
+					  </div><!--end mapbg-->
+
+
+
+
+
+
+
+
+					<!-- Section 4 - Funnel Performance Detail ////////////////////
+					////////////////////////////////////////////////////////////////////////////////-->
+
+						<div id="tabs-4" class="tabs">
+							<div class="rightcolumnwrap">
+						  		<div class="rightcolumn">
+
+									<!-- Section 4 - Awareness data
+									////////////////////////////////////////////////////////////////////////////////-->
+							  		<div class="col1wrap nobottomborder">
+									   <div class="col1" id="awareness">
+										<p>
+											Social Reach
+											<span>7,093,645</span>
+										</p>
+										<p>
+											Social Clicks
+											<span>37,122</span>
+										</p>
+									   </div>
+
+									   <!-- Section 4 - Consideration data
+									   ////////////////////////////////////////////////////////////////////////////////-->
+									   <div class="col1 nobottomborder" id="consideration">
+										<p>
+											Social Advocacy
+											<span>1,366</span>
+										</p>
+										<p>
+											Accounts Engaged
+											<span>543</span>
+										</p>
+										<p>
+											Contacts Engaged
+											<span>11,484</span>
+										</p>
+										<p>
+											IT Engagements
+											<span>7,388</span>
+										</p>
+										<p>
+											LOB Engagements
+											<span>1,715</span>
+										</p>
+										<p>
+											Net New Names
+											<span>3,871</span>
+										</p>
+										<p>
+											MEU Readership
+											<span>51.00%</span>
+										</p>
+									   </div>
+									</div>
+
+
+						
+									<div class="col2wrap nobottomborder">
+
+									<!-- Section 4 - Preference data
+									////////////////////////////////////////////////////////////////////////////////-->
+									   <div class="col2" id="preference">
+										<p>
+											MQL
+											<span>925</span>
+										</p>
+										<p>
+											SAL
+											<span>126</span>
+										</p>
+										<p>
+											Conversion Rate SAL/MQL
+											<span>14%</span>
+										</p>
+									   </div>
+
+									   <!-- Section 4 - Purchase data
+									   ////////////////////////////////////////////////////////////////////////////////-->
+									   <div class="col2" id="purchase">
+										<p>
+											SQL
+											<span>14</span>
+										</p>
+										<p>
+											Conversion Rate SQL/SAL
+											<span>11.00%</span>
+										</p>
+										<p>
+											SQL S
+											<span>$3,762,000</span>
+										</p>
+										<p>
+											Marketing Enabled Pipeline
+											<span>$1.362B</span>
+										</p>
+										<p>
+											Average MEP Deal Size
+											<span>$336K</span>
+										</p>
+										<p>
+											COI Subscribers
+											<span>11,179</span>
+										</p>
+										</div>
+
+										<!-- Section 4 - Loyalty data
+										////////////////////////////////////////////////////////////////////////////////-->
+									   <div class="col2 nobottomborder" id="loyalty">
+										<p>
+											Social Members
+											<span>25,307</span>
+										</p>
+										<p>
+											ASP Engagements
+											<span>12</span>
+										</p>
+										<p>
+											ASP MIO S
+											<span>$81,700,000</span>
+										</p>
+									   </div>
+									</div>
+
+
+									<div id="bottomboxes" class="nobottomborder">
+										<!-- //////////////////////////
+											
+												Use the classes .increase and .decrease to add or change the left arrows, and .datared and .datagreen to to change the text color, as shown below
+
+										/////////////////////////////-->
+
+										<!-- Row 1
+										////////////////////////////////////////////////////////////////////////////////-->
+										<div class="boxes">
+											<h2>
+											Social Clicks/Post
+											</h2>
+											<p class="increase datagreen">
+											+45.75%
+											</p>
+											<span>16.2 / <span class="datagreen">+5.09</span></span>
+										</div>
+
+										<div class="boxes">
+											<h2>
+											IT Engaged
+											</h2>
+											<p class="decrease datared">
+											-13.56%
+											</p>
+											<span>7,388 / <span class="datared">-1.16K</span></span>
+										</div>
+
+										<div class="boxes">
+											<h2>
+											Net New Names
+											</h2>
+											<p class="decrease datared">
+											-27.70%
+											</p>
+											<span>3.871 / <span class="datared">-1.41K</span></span>
+										</div>
+
+										<div class="boxes">
+											<h2>
+											SQL#
+											</h2>
+											<p class="decrease datared">
+											-30.00%
+											</p>
+											<span>40 / <span class="datared">-6</span></span>
+										</div>
+
+										<div class="boxes">
+											<h2>
+											Social Membership
+											</h2>
+											<p class="increase datagreen">
+											+13.64%
+											</p>
+											<span>25,307 / <span class="datagreen">+3.04K</span></span>
+										</div>
+
+										<!-- Row 2
+										////////////////////////////////////////////////////////////////////////////////-->
+										<div class="boxes">
+											<h2>Contacts Engaged</h2>
+											<p class="decrease datared">+45.75%</p>
+											<span>16.2 / <span class="datared">+5.09</span></span>
+										</div>
+
+										<div class="boxes">
+											<h2>LOB Engaged</h2>
+											<p class="decrease datared">-34.79%</p>
+											<span>1,715 / <span class="datared">-915</span></span>
+										</div>
+
+										<div class="boxes">
+											<h2>MQL#</h2>
+											<p class="increase datagreen">+91.51%</p>
+											<span>925 / <span class="datagreen">+442</span></span>
+										</div>
+
+										<div class="boxes">
+											<h2>SQL$</h2>
+											<p class="increase datagreen">+2,281.01%</p>
+											<span>$3.76M / <span class="datagreen">+3.6M</span></span>
+										</div>
+
+										<div class="boxes">
+											<h2>COI Subscribers</h2>
+											<p class="increase datagreen">+3.51%</p>
+											<span>11.2K / <span class="datagreen">+379</span></span>
+										</div>
+									</div>
+
+								</div>
+							</div>
+
+
+							<!-- Section 4 - Default left column ////////////////////
+							////////////////////////////////////////////////////////////////////////////////-->
+							<div class="leftcolumnwrap">
+								<div class="leftcolumn">
+									
+									<img src="img/performancefunnelicon.png" width="20px">
+								    <h1>YTD Enterprise Funnel Performance</h1>
+								    <p>This is a description of the data on this graph.</p>
+								    <ul>
+								    	<li><a href="http://placehold.it/550x650" class="lftbtn clearfix" data-lightbox="example-set" data-title="This is the image caption">Graph 1&nbsp;&nbsp;&nbsp;&#x276F;</a></li>
+								    	<li><a href="http://placehold.it/550x650" class="lftbtn clearfix" data-lightbox="example-set" data-title="This is the image caption">Graph 2&nbsp;&nbsp;&nbsp;&#x276F;</a></li>
+								    	<li><a href="http://placehold.it/550x650" class="lftbtn clearfix" data-lightbox="example-set" data-title="This is the image caption">Graph 3&nbsp;&nbsp;&nbsp;&#x276F;</a></li>
+								    </ul>
+									
+								</div>
+							</div>
+
+						</div>
+				
+				</div><!-- #maintabs -->
+			</div> <!-- .paddedcell -->
+		</div> <!-- #gpsscreen -->
+	</div> <!-- #gpswrap -->
+
+
+
+
+	<script>
+		$(document).ready(function(){
+
+			// Animate scroll between screens
+				$('.scroller').click(function() {
+					    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+					      var target = $(this.hash);
+					      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+					      if (target.length) {
+					        $('html,body').animate({
+					          scrollLeft: target.offset().left
+					        }, 1000);
+					        return false;
+					      }
+					    }
+				});
+
+			// Dim screens when they scroll
+				$(window).scroll(function() {
+				    $("#dashboarddials").css({
+				    'opacity' : 1-(($(this).scrollLeft())/350)
+				    });   
+				    $("#gpsscreen").css({
+				    'opacity' : 0+(($(this).scrollLeft())/2150)
+				    });      
+				});	
+			  
+			// Engage tabs
+			    $( ".tabs" ).tabs();
+
+			// Fade in dashboard data after page loads
+		        $("#dashdatawrap").delay(350).fadeIn('slow');
+
+		});
+	 </script>
+
+</body>
+</html>

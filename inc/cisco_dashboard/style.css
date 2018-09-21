@@ -1,0 +1,271 @@
+/* CSS reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, area, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	outline: 0;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* Global styles */
+body{background:#000;overflow-x:hidden;font-family: 'proximanova', sans-serif;font-size:1rem;color:#929292;}
+p{clear:both;font-size:.8rem;margin-bottom:1rem;margin-top:.75rem;color:#929292;}
+h1, h2, h3, h4 {color:#fff;font-family: 'oswaldregular', sans-serif;text-transform:uppercase;}
+a{color:#fff;text-decoration:none;}
+hr{border:0;border-bottom:1px solid #444;clear:both;margin:0 1px 0 1px;}
+
+/* Dashboard screen */
+#dialswrap{position:absolute;width:100%;height:100%;}
+#dashboarddials{height:720px;width:100%;text-align:center;margin:0 auto;
+	background-image:url(img/01-dials-bg-1.jpg);background-position:center top;background-size:1280px;background-repeat:no-repeat;}
+#eifmlogo{width:620px;top:35px;margin:0px auto;left:0;right:0;position:absolute;}
+#dashcta{display:block; top:620px; margin:0px auto; left:0; right:0; position:absolute; color:#000;background-color:#73BE44;font-family: 'oswaldmedium', sans-serif;padding:10px 2px 8px 2px;border-radius:3px;width:330px;text-decoration:none;text-transform:uppercase;}
+
+
+/* Dashboard data */
+#dashdatawrap{width:650px;height:330px;top:245px;margin:0px auto;left:0;right:0;position:absolute;z-index:1;display:none;}
+.dashdatabox{position:relative;display:inline-block;}
+	.dashdatabox h1{font-size:1.15em;text-align:left;margin-bottom:5px;}
+	.dashdatabox h2, .dashdatacolumn h2{color:#6f9f3c;font-size:2.55em;text-align:left;font-family: 'oswaldmedium', sans-serif;letter-spacing:-1px;padding-right:12px;}
+#dashdata1{width:125px;height:150px;top:138px;left:-65px;}
+#dashdata2{width:125px;height:100px;left:0px;}
+	#dashdata2 h1{font-size:1.05em;text-align:center;}
+	#dashdata2 h2{text-align:center;}
+#dashdata3{width:125px;height:150px;top:138px;left:95px;}
+#dashdatacolumnwrap{position:relative;left:255px;top:-38px;}
+.dashdatacolumn{width:124px;height:30px;padding:6px 6px 2px 6px;border-bottom:1px solid #222;clear:both;float:left;}
+	.dashdatacolumn .arrow-up {display:inline-block;width: 0; height: 0; border-left: 4px solid transparent;border-right: 4px solid transparent;border-bottom: 5px solid #6f9f3c;margin-bottom:3px;}
+	.dashdatacolumn .arrow-down {display:inline-block;width: 0; height: 0; border-left: 4px solid transparent;border-right: 4px solid transparent;border-top: 5px solid #E91D26;margin-bottom:3px;}
+	.dashdatacolumn h1, .dashdatacolumn h2{font-family: 'oswaldextralight', sans-serif;font-size:.70em;text-align:left;clear:none;letter-spacing:0px;float:left;text-transform:capitalize;}
+	.dashdatacolumn h2 {position:relative;bottom:11px;right:-15px;width:100px;text-align:right;}
+	.dashdatacolumn:nth-child(5){border:none;}
+
+.datagreen{color:#6f9f3c;}
+.datared{color:#E91D26!important;}
+#dashdatawrap .increase{background-image:url(img/arrow-up.png);background-repeat:no-repeat;background-size:10px;background-position:right;}
+#dashdatawrap .decrease{background-image:url(img/arrow-down.png);background-repeat:no-repeat;background-size:10px;background-position:right;}
+
+
+/* Tooltips */
+#tooltipwrap{width:650px;height:330px;top:245px;margin:0px auto;left:0;right:0;position:absolute;z-index:3;}
+.tooltipbox{position:relative;display:inline-block;color:#000;}
+
+#tip1{width:175px;height:100px;top:120px;left:-30px;}
+#tip2{width:175px;height:80px;top:-10px;}
+#tip3{width:175px;height:125px;top:120px;right:-30px;}
+#tip4{width:140px;height:35px;top:5px;left:215px;}
+#tip5{width:140px;height:35px;top:50px;left:72px;}
+#tip6{width:140px;height:35px;top:85px;left:-75px;}
+#tip7{width:140px;height:35px;top:125px;left:-217px;}
+#tip8{width:140px;height:35px;top:125px;}
+
+.ui-tooltip, .arrow:after {background: #fff;border: 1px solid #333;}
+.ui-tooltip {padding: 10px 15px;color: #333;border-radius: 5px;font-size:.75em;width:150px;position:absolute;z-index:3;}
+.arrow {width: 50px;height: 16px;overflow: hidden;position: absolute;left: 50%;margin-left: -35px;bottom: -16px;}
+.arrow.top {top: -16px;bottom: auto;}
+.arrow.left {left: 20%;}
+.arrow:after {content: "";position: absolute;left: 20px;top: -20px;width: 25px;height: 25px;box-shadow: 6px 5px 9px -9px black;
+    		-webkit-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg);}
+.arrow.top:after {bottom: -20px;top: auto;}
+.ui-helper-hidden-accessible{display:none;}
+
+
+/* GPS screen */
+#gpswrap{width:100%;height:100%;position:absolute;right:-2000px;top:0;}
+#gpsscreen{width:1280px;height:720px;opacity:0;margin:0 auto;
+	background-image:url(img/02-gps-bg-1.jpg);background-position:center top;background-size:1280px;background-repeat:no-repeat;}
+.paddedcell{padding:110px 150px 120px 160px;color:#fff;display:block;}
+
+
+/* GPS topnav */
+#topnav {margin-left:175px;width:740px;padding-bottom:60px;}
+	#topnav li, #dashlink li {float:left;margin-right:10px; text-indent: 110%;white-space: nowrap;overflow: hidden;}
+	#topnav li a, #dashlink li a{display:block;height:30px;border:none;background-repeat:no-repeat;background-position:center top;}
+	#topnav .ui-state-active a{background-position:center!important;}
+	#topnav li a:hover {background-position:center bottom;}
+#dashlink {float:right!important;}
+	#dashlink li{margin-right:-5px;}
+#dashtab{background-image:url(img/nav5-dash.png);width:98px;background-size:98px;}
+#areatab{background-image:url(img/nav1-area.png);width:88px;background-size:88px;}
+#architecturetab{background-image:url(img/nav2-architecture.png);width:136px;background-size:136px;}
+#transformationtab{background-image:url(img/nav3-transformation.png);width:177px;background-size:177px;}
+#funneltab{background-image:url(img/nav4-funnel.png);width:209px;background-size:209px;}
+
+
+/* GPS Sections */
+#tabs-1, #tabs-2, #tabs-3, #tabs-4{width:100%;height:100%;}
+.leftcolumnwrap{z-index:0;width:240px;display:inline-block;}
+.leftcolumn{width:200px;margin-top:10px;padding:30px 40px 15px 25px;float:left;
+	background-position:top left;background-size:240px;background-repeat:repeat-y;background-image:url(img/leftcolumn-bg.png);}
+	.leftcolumn h1, .rightcolumn .leftcolumnhover h1{font-size:1.35em;font-family:'oswaldextralight', sans-serif;margin-bottom:.1em;}
+	.leftcolumn p, .rightcolumn .leftcolumnhover p {margin-bottom:15px;line-height:1rem;}
+.leftcolumn2{width:225px;float:left;padding-left:25px;margin-top:25px;font-size:.65em;}
+	.leftcolumn2 span{color:#73BE44;font-weight:bold;}
+.rightcolumnwrap{width:700px;height:450px;float:right;}
+.rightcolumn{width:700px;height:450px;background-size:700px;background-repeat:no-repeat;background-position:top;}
+.gps_default_tab{display:none;}
+
+.backbtn, .lftbtn{display:block;font-family: 'oswaldregular', sans-serif;font-size:1.1rem;float:right;text-transform:uppercase;padding:5px 10px;margin:20px 20px 10px 0;border:1px solid #fff;text-decoration:none;}
+.backbtn:hover, .lftbtn{opacity:.75;}
+.lftbtn{float:left;clear:both;margin:5px;}
+
+.orange{color:#f37d21;border-color:#f37d21;}
+.gold{color:#f8ae19;border-color:#f8ae19;}
+.yellow{color:#f5d51f;border-color:#f5d51f;}
+.purple{color:#78649c;border-color:#78649c;}
+.blue{color:#00a0ce;border-color:#00a0ce;}
+.teal{color:#5AABAB;border-color:#5AABAB;}
+.green{color:#22a248;border-color:#22a248;}
+.red{color:#e64316;border-color:#e64316;}
+
+.rightcolumninner{width:700px;float:right;margin-top:0px;right:-50px;border:none!important;}
+.rightcolumn h1{font-size:4rem;font-weight:700;margin-bottom:5px;}
+.rightcolumn h2{margin-bottom:25px;}
+.rightcolumn div{font-family:'oswaldextralight', sans-serif;padding-bottom:5px;border-bottom:1px solid #666;margin-bottom:5px;}
+.rightcolumn div span{float:right;text-align:right;}
+.fineprint {font-size:.65rem;}
+
+/* Change Left Column On Hover */
+.leftcolumnhover{border:none!important;width:240px;height:400px;position:relative;float:left;margin-left:-270px;top:10px;
+				 background-image:url(img/02-gps-bg-1.jpg);background-position:center;background-size:1280px;background-repeat:no-repeat;}
+.leftcolumnhover p{background:#000;font-family: 'proximanova', sans-serif;font-size:.8rem;color:#929292;line-height:1rem;}
+.leftcolumnhover div{border:none!important;position:relative;float:left;width:200px;padding:30px 40px 15px 25px;background-position:top left;background-size:240px;background-repeat:repeat-y;background-image:url(img/leftcolumn-bg.png);z-index:100;}
+.leftcolumnback{font-family: 'oswaldregular', sans-serif;font-size:1.1rem;text-transform:uppercase;padding:5px 10px;margin-bottom:25px;text-decoration:none;}
+.leftcolumnback:hover{opacity:.75;}
+
+
+/* GPS Section 1 */
+.mapbtns{height:26px;width:96px;background-repeat:no-repeat;
+    background-image:url(img/section1-leftcolumn-buttons.png);
+	display:block;text-indent: 100%;white-space: nowrap;overflow: hidden;float:left;background-size:12em;}
+.mapbtns:hover, #tabs-1 .leftcolumn .ui-state-active a{background-image:url(img/section1-leftcolumn-buttons-hover.png);}
+.mapbtn1{background-position:top left;}
+.mapbtn2{background-position:top right;}
+.mapbtn3{background-position:bottom left;}
+.mapbtn4{background-position:bottom right;}
+#tabs-1 a div{font-size:.9rem;}
+
+.section1-central{background-image:url(img/section1-rightcolumn-central.png);}
+.section1-central .databack{width:270px;height:330px;margin-top:20px;margin-right:310px;}
+
+.section1-east{background-image:url(img/section1-rightcolumn-east.png);}
+.section1-east .databack{width:270px;height:330px;margin-top:20px;margin-right:150px;}
+
+.section1-south{background-image:url(img/section1-rightcolumn-south.png);}
+.section1-south .databack{position:relative;width:270px;height:330px;margin-top:20px;margin-right:205px;}
+
+.section1-west{background-image:url(img/section1-rightcolumn-west.png);}
+.section1-west .databack{position:relative;width:270px;height:330px;margin-top:20px;margin-right:175px;}
+
+
+/* GPS Section 2 */
+#tabs-2 .leftcolumn h1{font-size:1.25rem;font-family:'oswaldextralight', sans-serif;}
+#tabs-2 .leftcolumn p{font-size:.75rem;}
+#tiles li {float:left;margin:0 10px 10px 0;}
+#tiles li a{width:340px;height:190px;display:block;text-indent: 100%;white-space: nowrap;overflow: hidden;background-repeat:no-repeat;background-size:340px;}
+#tiles li a:hover{opacity:.75;}
+#tile-collab{background-image:url(img/secton2-thumb-collaboration-1.png);}
+#tile-datacenter{background-image:url(img/secton2-thumb-datacenter-1.png);}
+#tile-networking{background-image:url(img/secton2-thumb-networking-1.png);}
+#tile-security{background-image:url(img/secton2-thumb-security-1.png);}
+#tabs-2 .rightcolumn{border:1px solid #444;border-radius:3px;height:400px;background:#000;}
+#tabs-2 .rightcolumninner img{width:40px;margin-top:10px;margin-left:10px;}
+#tabs-2 .rightcolumninner h1{font-size:18px;display:inline-block;line-height:1em;}
+#tabs-2 .rightcolumninner h2{font-size:72px;font-weight:700;margin-bottom:0;margin-top:10px; margin-left:20px;}
+#tabs-2 .rightcolumninner h3{font-size:18px;margin-top:0;margin-bottom:15px;margin-top:5px; margin-left:20px;}
+#tabs-2 .rightcolumninner div{margin-left:20px;margin-right:20px;font-size:16px;}
+
+#tabs-2 .leftcolumnhover{margin-left:-271px;top:9px;}
+
+
+/* GPS Section 3 */
+#tabs-3 .leftcolumn{margin-top:0;}
+#mapbg{width:967px;height:430px;background-image:url(img/section3-map-bg-1.jpg);background-size:cover;position:relative;top:-38px;left:-20px;padding:32px 15px 0 20px;}
+.mapmarker{width:103px;height:106px;background-size:103px;background-repeat:no-repeat;display:block;position:relative;}
+.marker1{background:url(img/);top:;left:;}
+.marker2{background:url(img/);top:;left:;}
+.marker3{background:url(img/);top:;left:;}
+.marker4{background:url(img/);top:;left:;}
+.marker5{background:url(img/);top:;left:;}
+.marker6{background:url(img/);top:;left:;}
+.marker7{background:url(img/);top:;left:;}
+#tabs-3 .rightcolumn{border:1px solid #444;border-radius:3px;height:400px;background:#000;}
+#tabs-3 .rightcolumninner img{width:40px;margin-top:10px;margin-left:15px;margin-right:5px;}
+#tabs-3 .rightcolumninner h1{font-size:1.1rem;display:inline-block;line-height:1rem;}
+#tabs-3 .rightcolumninner h2{display:inline-block;font-size:3.5rem;font-weight:700;margin-bottom:0;margin-top:10px; margin-left:20px;}
+#tabs-3 .rightcolumninner h3{display:inline-block;font-size:1.5rem;margin-top:0;margin-bottom:15px; margin-left:10px;}
+#tabs-3 .rightcolumninner div{margin-left:20px;margin-right:20px;font-size:1.2rem;}
+#tabs-3 hr{border-width:3px;margin-right:20px;margin-left:15px;}
+
+#tabs-3 .leftcolumnhover{margin-left:-268px;top:-1px;}
+
+/* GPS Section 4 */
+#tabs-4 .leftcolumn{}
+#tabs-4 .rightcolumn{margin-top:10px;border-top:2px solid #fff;width:650px;margin-right:25px;margin-left:25px;padding-top:10px;color:#fff;}
+#tabs-4 .rightcolumn .col1 p, #tabs-4 .rightcolumn .col2 p{color:#eee;margin:0px;padding:0 0 3px 0;}
+#tabs-4 .rightcolumn .col1 p{padding-left:130px;}
+#tabs-4 .rightcolumn .col1{background-position:top left;margin-right:7px;}
+#tabs-4 .rightcolumn .col2 p{padding-right:130px;}
+#tabs-4 .rightcolumn .col2{background-position:top right;margin-left:7px;}
+#tabs-4 .rightcolumn .col1, #tabs-4 .rightcolumn .col2{font-family:'oswaldextralight', sans-serif;background-repeat:no-repeat;background-size:113px;}
+#tabs-4 .rightcolumn .col1 p span, #tabs-4 .rightcolumn .col2 p span{float:right;}
+.col1wrap{width:320px;float:left;}
+.col2wrap{width:320px;float:right;}
+#tabs-4 .nobottomborder{border-bottom:none;}
+#tabs-4 div{border-color:#fff;margin-bottom:8px;}
+#awareness{background-image:url(img/section4-tag-awareness.png);}
+#consideration{background-image:url(img/section4-tag-consideration.png);}
+#preference{background-image:url(img/section4-tag-preference.png);}
+#purchase{background-image:url(img/section4-tag-purchase.png);}
+#loyalty{background-image:url(img/section4-tag-loyalty.png);}
+
+#tabs-4 #bottomboxes{float:left;width:700px;margin-top:-15px;}
+#tabs-4 .boxes{width:115px;height:50px;padding:5px;border:1px solid #fff;margin:0 3px 3px 0;float:left;}
+
+#tabs-4 .boxes h2{font-size:.65em;font-family: 'proximanova', sans-serif;text-transform:capitalize;margin:0;}
+#tabs-4 .boxes p {padding:4px 0 0 25px;font-size:1.1em;margin:2px 0 0 0;font-family: 'proximanova', sans-serif;font-weight:700;}
+#tabs-4 .boxes p.increase{background-image:url(img/arrow-up.png);background-repeat:no-repeat;background-size:10px;background-position:left;}
+#tabs-4 .boxes p.decrease{background-image:url(img/arrow-down.png);background-repeat:no-repeat;background-size:10px;background-position:left;}
+#tabs-4 .boxes span {margin-left:25px;font-family: 'proximanova', sans-serif;font-size:10px;padding-left:3px;float:left;}
+#tabs-4 .boxes span span {float:right;margin-left:0;}
+
+
+

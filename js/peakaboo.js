@@ -1,0 +1,116 @@
+$(".thumb1").click(function(){
+    $(".portfoliodiv").hide();
+    $("#portfolio1").slideToggle(500);
+})
+$(".thumb2").click(function(){
+    $(".portfoliodiv").hide();
+    $("#portfolio2").slideToggle(500);
+})
+$(".thumb3").click(function(){
+    $(".portfoliodiv").hide();
+    $("#portfolio3").slideToggle(500);
+})
+$(".thumb4").click(function(){
+    $(".portfoliodiv").hide();
+    $("#portfolio4").slideToggle(500);
+})
+$(".thumb5").click(function(){
+    $(".portfoliodiv").hide();
+    $("#portfolio5").slideToggle(500);
+})
+$(".thumb6").click(function(){
+    $(".portfoliodiv").hide();
+    $("#portfolio6").slideToggle(500);
+})
+$(".thumb7").click(function(){
+    $(".portfoliodiv").hide();
+    $("#portfolio7").slideToggle(500);
+})
+$(".thumb8").click(function(){
+    $(".portfoliodiv").hide();
+    $("#portfolio8").slideToggle(500);
+})
+$(".thumb9").click(function(){
+    $(".portfoliodiv").hide();
+    $("#portfolio9").slideToggle(500);
+})
+$(".thumb10").click(function(){
+    $(".portfoliodiv").hide();
+    $("#portfolio10").slideToggle(500);
+})
+$(".thumb11").click(function(){
+    $(".portfoliodiv").hide();
+    $("#portfolio11").slideToggle(500);
+})
+$(".thumb12").click(function(){
+    $(".portfoliodiv").hide();
+    $("#portfolio12").slideToggle(500);
+})
+$(".thumb13").click(function(){
+    $(".portfoliodiv").hide();
+    $("#portfolio13").slideToggle(500);
+})
+$(".thumb14").click(function(){
+    $(".portfoliodiv").hide();
+    $("#portfolio14").slideToggle(500);
+})
+$(".thumb15").click(function(){
+    $(".portfoliodiv").hide();
+    $("#portfolio15").slideToggle(500);
+})
+$(".thumb16").click(function(){
+    $(".portfoliodiv").hide();
+    $("#portfolio16").slideToggle(500);
+})
+$(".thumb17").click(function(){
+    $(".portfoliodiv").hide();
+    $("#portfolio17").slideToggle(500);
+})
+$(".thumb18").click(function(){
+    $(".portfoliodiv").hide();
+    $("#portfolio18").slideToggle(500);
+})
+$(".thumb19").click(function(){
+    $(".portfoliodiv").hide();
+    $("#portfolio19").slideToggle(500);
+})
+$(".thumb20").click(function(){
+    $(".portfoliodiv").hide();
+    $("#portfolio20").slideToggle(500);
+})
+$(".thumb21").click(function(){
+    $(".portfoliodiv").hide();
+    $("#portfolio21").slideToggle(500);
+})
+$(".thumb22").click(function(){
+    $(".portfoliodiv").hide();
+    $("#portfolio22").slideToggle(500);
+})
+$(".thumb23").click(function(){
+    $(".portfoliodiv").hide();
+    $("#portfolio23").slideToggle(500);
+})
+$(".thumb24").click(function(){
+    $(".portfoliodiv").hide();
+    $("#portfolio24").slideToggle(500);
+})
+$(".thumb25").click(function(){
+    $(".portfoliodiv").hide();
+    $("#portfolio25").slideToggle(500);
+})
+$(".thumb26").click(function(){
+    $(".portfoliodiv").hide();
+    $("#portfolio26").slideToggle(500);
+})
+$(".thumb27").click(function(){
+    $(".portfoliodiv").hide();
+    $("#portfolio27").slideToggle(500);
+})
+$(".thumb28").click(function(){
+    $(".portfoliodiv").hide();
+    $("#portfolio28").slideToggle(500);
+})
+$(".thumb29").click(function(){
+    $(".portfoliodiv").hide();
+    $("#portfolio29").slideToggle(500);
+})
